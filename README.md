@@ -39,7 +39,21 @@ I am going to work on creating a game that contains all of the most popular card
 ### Classes
 
 - << You should have a list of each of your classes with a description >>
-
+Class CardB: This is a class that contains the card object for the game of blackjack. It takes in 5 variables,
+        img_file : str - path to image file
+        suit: str, contains the specific suit of the card
+        number: int, the exact number that is read on the card
+        name: string, f.e  "eight" or the queen card "queen"
+        worth: int, the numerical value of a card
+    The method assign_value takes in the number of the card and assigns a playing value to it
+Class Currency: A class which contains the currency object, which is applicable throughout all of the games. It takes in 5 variables,
+        total: int, the total amount of currency that the player has
+        img_file: str - path to file image
+        color: str - color of the currency
+        x: int - x coordinate of the currency display
+        y: int - y coordinate of the currency display
+    The method checkFunds checks the Players total amount of money to see if they have enough money to make a bet
+    The method addFunds adds funds into the Players account
 ## ATP
 
 | Step                 |Procedure             |Expected Results                   |

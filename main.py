@@ -3,7 +3,8 @@ import pygame
 
 def main():
     pygame.init()
-    #Create an instance on your controller object
+    #2controller = Controller()
+    #controller.mainloop()
     #Call your mainloop
     
     ###### NOTHING ELSE SHOULD GO IN main(), JUST THE ABOVE 3 LINES OF CODE ######
