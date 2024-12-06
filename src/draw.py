@@ -1,18 +1,14 @@
 import pygame
-
+from src.card import Card
 
 def draw_hand(screen, hand, x, y, font):
-    """Draw a player's hand of cards."""
     for i, card in enumerate(hand):
-        if card is None:
-            
-            card_image = pygame.image.load('assets/back_card.png')  
-            card_rect = pygame.Rect(x + i * 100, y, 71, 96)  
-            screen.blit(card_image, card_rect)
-        else:
-            # If it's a valid card, display its rank and suit
-            text = font.render(f"{card.rank} of {card.suit.capitalize()}", True, (0, 0, 0))
-            screen.blit(text, (x + i * 100, y))  # Display the card text at the given position
+        if isinstance(card, Card):  # Ensure card is an instance of Card
+            card_image = pygame.image.load(f'assets/{card.rank}_of_{card.suit}.png')
+            #text = font.render(f"{card.rank} of {card.suit.capitalize()}", True, (0, 0, 0))
+            screen.blit(card_image, (x + i * 100, y))  # Adjust position as needed
+        elif isinstance(card, pygame.Surface):  # If the card is an image (back card)
+            screen.blit(card, (x + i * 100, y))  # Draw image (back of card)
 
 # Function to draw coins at the bottom of the screen
 def draw_coins(screen, coins, x, y, font):
@@ -23,7 +19,7 @@ def draw_coins(screen, coins, x, y, font):
     screen.blit(coin_text, (x + 35, y))  # Draw the coins text next to the coin image
 
 # Function to draw the game title or status text (e.g., "Game Over", "You Win!")
-def draw_status(screen, text, y, font):
+def draw_status(screen, text,y, font):
     status_text = font.render(text, True, (255, 255, 255))
     screen.blit(status_text, (250, y))  # Position the status text in the center of the screen
 

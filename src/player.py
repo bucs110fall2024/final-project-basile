@@ -1,15 +1,20 @@
 class Player:
     def __init__(self, name="Player", coins= 20):
+        """
+        Initializes a Player object: name: string hand: list total:int coins: int
+        """
         self.name = name
         self.hand = []
         self.total = 0
         self.coins = 20  # Start with 20 coins
 
     def reset(self):
+        # Restes the Players hand and total for the next game
         self.hand = []
         self.total = 0
 
     def add_card(self, card):
+        #Adds a card to the Players hand
         self.hand.append(card)
         self.total += card.get_value()
 
@@ -21,14 +26,4 @@ class Player:
                     self.total -= 10
                     break
 
-    def place_bet(self, bet_amount):
-        if self.coins >= bet_amount:
-            self.coins -= bet_amount
-            return True
-        return False
-
-    def win_bet(self, bet_amount):
-        self.coins += bet_amount
-
-    def lose_bet(self, bet_amount):
-        self.coins -= bet_amount
+   

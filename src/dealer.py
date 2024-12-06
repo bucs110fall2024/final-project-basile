@@ -1,15 +1,20 @@
 class Dealer:
     def __init__(self):
-        self.hand = []  # List of cards the dealer holds
-        self.total = 0  # Total value of the dealer's hand (used for checking win/lose)
+        """
+        Initializes a Dealer object. 
+        Hand: list - List of cards the dealer holds
+        Total: int - total value of the dealers hand
+        """
+        self.hand = []  
+        self.total = 0  
     
     def add_card(self, card):
-        """Add a card to the dealer's hand and update total."""
+        #Add a card to the dealer's hand and update total.
         self.hand.append(card)
         self.total = self.calculate_total()
 
     def calculate_total(self):
-        """Calculate the total value of the dealer's hand."""
+        #Calculate the total value of the dealer's hand.
         total = 0
         aces = 0  # Keep track of aces because they can be worth 1 or 11
 

@@ -3,7 +3,7 @@ from src.card import Card
 
 class Deck:
     def __init__(self):
-        # Create a deck of 52 cards (standard deck)
+        # Create a deck of 52 cards (standard deck) cards: list
         self.cards = []
         self.create_deck()
 
